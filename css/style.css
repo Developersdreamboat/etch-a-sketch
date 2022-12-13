@@ -12,6 +12,7 @@ body {
   font-weight: 700;
   background-color: #650a75;
   text-align: center;
+  color: hsl(0deg 0% 90%);
 }
 
 .header {
@@ -43,7 +44,7 @@ body {
 }
 
 .sector {
-  background-color: #03A9F4;
+  background-color: rgb(255, 255, 255);
   margin: 0;
   padding: 0;
   border-width: 0;

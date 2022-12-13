@@ -1,6 +1,7 @@
 "use strict"
 
 const container = document.querySelector('.container');
+const baseBoxBrightness = 1;
 let isMouseDown;
 let isCreated;
 
@@ -25,6 +26,20 @@ function setUpBoxGrid(quantity, createGridCallback) {
   createGridCallback(quantity);
 }
 
+const toRGBArray = rgbStr => rgbStr.match(/\d+/g).map(Number);
+
+function changeColor(caller) {
+  let rgbString = window.getComputedStyle( caller ,null).getPropertyValue('background-color');
+  let rgbArray = toRGBArray(rgbString);
+  for (let i = 0; i < rgbArray.length; i++) {
+    if (rgbArray[i] == 5) {
+      rgbArray[i] = 0;
+    }
+      rgbArray[i] -= 25;
+    }
+    caller.style['background-color'] = `rgb(${rgbArray[0]}, ${rgbArray[1]}, ${rgbArray[2]})`;
+}
+
 const changeButton = document.querySelector('.change-box-quantity > button');
 
 changeButton.addEventListener('click', () => {
@@ -43,6 +58,7 @@ document.addEventListener("mouseover", function(e){
   const target = e.target.closest(".container");
   if(isMouseDown == true && 
       e.target && e.target.matches(".sector") ){
-    e.target.style['background-color'] = 'white';
+      changeColor(e.target);
   }
 });
+
