@@ -29,8 +29,8 @@ const changeButton = document.querySelector('.change-box-quantity > button');
 
 changeButton.addEventListener('click', () => {
   let userResponse = prompt('Print a number of boxes', 16);
-  if (userResponse > 100) {
-    alert("Too many boxes!");
+  if (userResponse <= 1 || userResponse > 100) {
+    alert("Inappropriate number of boxes!");
     return;
   }
   setUpBoxGrid(userResponse, createBoxGrid);
