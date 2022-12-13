@@ -20,10 +20,18 @@ body {
   padding: 0;
 }
 
-.footer {
-  font-size: 16px;
-  margin: 0 0 0 0;
-  padding: 12px 0;
+.change-box-quantity {
+  margin: 24px 0;
+}
+
+.change-box-quantity > button {
+  font-size: 24px;
+  font-weight: 600;
+  margin: auto;
+  color: #eedb36;
+  background-color: #650a75;
+  border-color: #eedb36;
+  display: block;
 }
 
 .container {
@@ -42,3 +50,8 @@ body {
   aspect-ratio: 1 / 1 ;
 }
 
+.footer {
+  font-size: 16px;
+  margin: 32px 0 0 0;
+  padding: 12px 0;
+}
