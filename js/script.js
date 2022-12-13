@@ -29,6 +29,10 @@ const changeButton = document.querySelector('.change-box-quantity > button');
 
 changeButton.addEventListener('click', () => {
   let userResponse = prompt('Print a number of boxes', 16);
+  if (userResponse > 100) {
+    alert("Too many boxes!");
+    return;
+  }
   setUpBoxGrid(userResponse, createBoxGrid);
 });
 
@@ -42,6 +46,3 @@ document.addEventListener("mouseover", function(e){
     e.target.style['background-color'] = 'white';
   }
 });
-
-
-//when hover change state, but unhover dont leave it
